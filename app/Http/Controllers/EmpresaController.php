@@ -29,7 +29,7 @@ class EmpresaController extends Controller
      */
     public function create()
     {
-        //
+        return view('empresa.cadastro');
     }
 
     /**
@@ -40,7 +40,7 @@ class EmpresaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dd($request->all());
     }
 
     /**

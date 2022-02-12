@@ -15,6 +15,6 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/cadastre-se', function () {
-    return 'cadastro';
-})->name('cadastro');
+Route::get('/cadastre-se', 'App\Http\Controllers\EmpresaController@create')->name('cadastro');
+
+Route::post('/cadastre-se', 'App\Http\Controllers\EmpresaController@store')->name('cadastrar');
