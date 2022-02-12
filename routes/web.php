@@ -18,3 +18,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/cadastre-se', 'App\Http\Controllers\EmpresaController@create')->name('cadastro');
 
 Route::post('/cadastre-se', 'App\Http\Controllers\EmpresaController@store')->name('cadastrar');
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
